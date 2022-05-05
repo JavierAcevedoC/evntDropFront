@@ -1,0 +1,43 @@
+<div class="center">
+<mat-card>
+    <div class="box">
+        <div class="flex">
+            <img mat-card-image src="{{ image }}" alt="Photo of a Shiba Inu">
+            <p class="title">
+                {{ ticket?.eventName || 'Xavi Cum'}} - 
+                {{ ticket?.description || 'Xavi Cum of course mah bro :D'}}
+            </p>
+            <div class="degree">
+                <ngx-barcode bc-value="{{ ticket?.code }}" [bc-display-value]="true" [bc-width]="1" [bc-height]="30"></ngx-barcode>
+            </div>
+        </div>
+       
+        <mat-card-content>
+            <div class="flex down">
+                <div class="event-date">
+                    {{ getMonth() }} <br>
+                    <strong> {{ getDay()}} </strong> <br>
+                    {{ getYear() }} <br>
+                </div>
+                <div class="event-seat">
+                   <table>
+                       <tr>
+                            <th>Asiento</th>
+                            <th>Fila</th>
+                            <th>Sector</th>
+                       </tr>
+                        <tr>
+                            <td> {{ ticket?.place?.seat || 0 }} </td>
+                            <td> {{ ticket?.place?.row || 0 }} </td>
+                            <td> {{ ticket?.place?.sector || 0 }} </td>
+                        </tr>  
+                   </table>
+                </div>
+                <div class="a_design_circle">
+                    <button mat-fab ></button>
+                </div>
+            </div>
+        </mat-card-content>
+    </div>
+</mat-card>
+</div>
